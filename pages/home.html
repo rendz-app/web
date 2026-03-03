@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>อบต. ลาดบัวขาว - องค์การบริหารส่วนตำบลลาดบัวขาว จังหวัดราชบุรี</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../output.css" />
+</head>
+<body class="font-sans text-slate-900 bg-[#f7f8fe] antialiased" style="font-family: 'Noto Sans Thai', sans-serif;">
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-obt-blue text-white shadow-lg" style="background-color: #294490;">
+    <div class="max-w-6xl mx-auto px-4 flex items-center justify-between h-16 md:h-18">
+      <a href="home.html" class="flex items-center gap-2 touch-target justify-center">
+        <img src="../images/logo.png" alt="ตราอบต." class="w-9 h-9 rounded-full p-0.5 object-contain" style="background-color: #294490;" onerror="this.style.display='none'" />
+        <span class="text-lg md:text-xl font-bold tracking-tight">อบต. ลาดบัวขาว</span>
+      </a>
+      <button id="menu-toggle" type="button" class="md:hidden touch-target flex items-center justify-center rounded-lg hover:bg-white/10" aria-label="เปิดเมนู">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+      <nav id="main-nav" class="hidden md:flex items-center gap-1 text-sm">
+        <a href="home.html" class="px-3 py-2 rounded-lg bg-white/15 font-medium">หน้าแรก</a>
+        <a href="personel.html" class="px-3 py-2 rounded-lg hover:bg-white/10">บุคลากร</a>
+        <div class="relative group">
+          <button type="button" class="px-3 py-2 rounded-lg hover:bg-white/10 flex items-center gap-2">บริการประชาชน
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="absolute right-0 top-full z-50 w-56 bg-white text-slate-900 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-opacity duration-150 ease-out">
+            <a href="home.html#news" class="block px-4 py-2 hover:bg-slate-100">ประชาสัมพันธ์</a>
+            <a href="home.html#gallery" class="block px-4 py-2 hover:bg-slate-100">ประมวลภาพกิจกรรม</a>
+          </div>
+        </div>
+        <a id="contact-nav" href="contact.html" class="ml-2 px-4 py-2 rounded-full bg-obt-orange hover:bg-orange-600 font-medium shadow-sm">ติดต่ออบต.</a>
+      </nav>
+    </div>
+    <div id="mobile-menu" class="fixed inset-0 z-40 hidden md:hidden">
+      <div id="mobile-menu-backdrop" class="absolute inset-0 bg-slate-900/50 opacity-0 transition-opacity duration-300"></div>
+      <div id="mobile-menu-panel" class="absolute inset-y-0 left-0 w-72 max-w-[80vw] shadow-2xl transform -translate-x-full transition-transform duration-300 flex flex-col" style="background-color: #1E3A8A;">
+        <!-- Header -->
+        <div class="flex items-center justify-between px-4 py-4 border-b border-white/10">
+          <div class="flex items-center gap-3">
+            <img src="../images/logo.png" alt="ตราอบต." class="w-10 h-10 rounded-full p-0.5 object-contain" style="background-color: #294490;" onerror="this.style.display='none'" />
+            <span class="text-white font-semibold text-base">อบต. ลาดบัวขาว</span>
+          </div>
+          <button id="mobile-menu-close" type="button" class="touch-target flex items-center justify-center w-10 h-10 rounded-lg hover:bg-white/10 text-white transition" aria-label="ปิดเมนู">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+        <!-- Navigation -->
+        <nav class="flex-1 overflow-y-auto py-4">
+          <div class="space-y-1">
+            <a href="home.html" class="block px-6 py-3 text-white hover:bg-white/10 touch-target transition">หน้าหลัก</a>
+            <a href="personel.html" class="block px-6 py-3 text-white hover:bg-white/10 touch-target transition">บุคลากร</a>
+            <button id="mobile-services-toggle" type="button" class="block w-full text-left px-6 py-3 flex items-center justify-between text-white hover:bg-white/10 touch-target transition">
+              <span>บริการประชาชน</span>
+              <svg id="mobile-services-arrow" class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div id="mobile-services-submenu" class="hidden bg-white/5">
+              <a href="home.html#news" class="block px-10 py-2.5 text-white/90 hover:bg-white/10 text-sm transition">ประชาสัมพันธ์</a>
+              <a href="home.html#gallery" class="block px-10 py-2.5 text-white/90 hover:bg-white/10 text-sm transition">ประมวลภาพกิจกรรม</a>
+            </div>
+            <a href="home.html#ita" class="block px-6 py-3 text-white hover:bg-white/10 touch-target transition">ITA</a>
+            <div class="relative">
+              <button id="mobile-contact-toggle" type="button" class="flex items-center justify-between w-full px-6 py-3 text-white hover:bg-white/10 touch-target transition">
+                <span>ติดต่ออบต.</span>
+                <svg id="mobile-contact-arrow" class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </button>
+              <div id="mobile-contact-submenu" class="hidden bg-white/5">
+                <a href="contact.html" class="block px-10 py-2.5 text-white/90 hover:bg-white/10 text-sm transition">ข้อมูลติดต่อ</a>
+                <a href="contact.html#complaint" class="block px-10 py-2.5 text-white/90 hover:bg-white/10 text-sm transition">ร้องเรียน/ร้องทุกข์</a>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+    <section class="relative overflow-hidden text-white hero-bg">
+    <div class="absolute inset-0 pointer-events-none" style="opacity: 0.18;">
+        <div class="absolute -top-24 -right-16 w-72 h-72 rounded-full" style="background: rgba(249,115,22,0.06); filter: blur(48px);"></div>
+        <div class="absolute bottom-[-4rem] left-[-4rem] w-80 h-80 rounded-full" style="background: rgba(14,165,233,0.06); filter: blur(48px);"></div>
+    </div>
+    <div class="relative z-10 max-w-6xl mx-auto px-4 py-12 md:py-20 grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-xs md:text-sm mb-4 border border-white/15">
+          <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+          พร้อมให้บริการประชาชน
+        </span>
+        <h1 class="text-2xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4">
+          องค์การบริหารส่วนตำบลลาดบัวขาว
+        </h1>
+        <p class="text-slate-200 text-sm md:text-base mb-6 max-w-xl">
+          มุ่งเน้นการบริการอย่างโปร่งใส ทันสมัย และใกล้ชิดประชาชน
+          พร้อมพัฒนาคุณภาพชีวิตและโครงสร้างพื้นฐานในตำบลอย่างยั่งยืน
+        </p>
+        <div class="flex flex-col sm:flex-row gap-3 justify-start mb-6">
+          <a id="cta-quicklinks" href="#quick-links" class="inline-flex items-center justify-center min-h-[44px] px-6 py-3 rounded-full bg-obt-orange hover:bg-orange-500 font-medium text-sm md:text-base shadow-md shadow-orange-900/40 transform transition-transform duration-150 hover:scale-105 hover:-translate-y-1 hover:shadow-lg active:scale-95" style="background-color: #F97316;">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12h18M13 5l7 7-7 7"/></svg>
+            เข้าสู่บริการประชาชน
+          </a>
+          <a id="contact-hero" href="contact.html" class="inline-flex items-center justify-center min-h-[44px] px-6 py-3 rounded-full border border-white/70 hover:bg-white/10 font-medium text-sm md:text-base transition">
+            ติดต่ออบต. ลาดบัวขาว
+          </a>
+        </div>
+        <dl class="grid grid-cols-3 gap-3 text-xs md:text-sm text-slate-100/90">
+          <div class="rounded-2xl bg-white/5 border border-white/10 px-3 py-2">
+            <dt class="text-[0.7rem] uppercase tracking-wide text-slate-200/80">หมู่บ้าน</dt>
+            <dd class="font-semibold text-base md:text-lg">15</dd>
+          </div>
+          <div class="rounded-2xl bg-white/5 border border-white/10 px-3 py-2">
+            <dt class="text-[0.7rem] uppercase tracking-wide text-slate-200/80">ประชากร (ประมาณ)</dt>
+            <dd class="font-semibold text-base md:text-lg">7,000+</dd>
+          </div>
+          <div class="rounded-2xl bg-white/5 border border-white/10 px-3 py-2">
+            <dt class="text-[0.7rem] uppercase tracking-wide text-slate-200/80">เวลาราชการ</dt>
+            <dd class="font-semibold text-base md:text-lg">จันทร์–ศุกร์</dd>
+          </div>
+        </dl>
+      </div>
+      <div class="hidden md:block">
+        <div class="relative mx-auto max-w-md">
+          <div class="absolute -inset-1 rounded-3xl bg-gradient-to-br from-obt-orange to-sky-400 opacity-70 blur-xl"></div>
+          <div class="relative rounded-3xl bg-slate-900/70 border border-white/10 overflow-hidden shadow-2xl backdrop-blur">
+            <div class="flex items-center justify-between px-4 py-3 border-b border-white/10 text-xs text-slate-200">
+              <span class="inline-flex items-center gap-2">
+                <span class="flex -space-x-1">
+                  <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-red-400"></span>
+                </span>
+                แดชบอร์ดสรุปงาน อบต.
+              </span>
+              <span class="text-[0.65rem] uppercase tracking-wide text-slate-300/80">ตัวอย่างหน้าจอ</span>
+            </div>
+            <div class="p-4 space-y-3 text-xs text-slate-100">
+              <div class="flex items-center justify-between">
+                <span class="text-slate-200/90">คำร้องออนไลน์วันนี้</span>
+                <span class="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-[0.7rem]">
+                  8 รายการ
+                </span>
+              </div>
+              <div class="grid grid-cols-2 gap-3">
+                <div class="rounded-2xl bg-slate-800/60 border border-white/5 px-3 py-2.5">
+                  <p class="text-[0.7rem] text-slate-300/80 mb-1">บริการประชาชน</p>
+                  <p class="text-lg font-semibold text-white">4</p>
+                  <p class="text-[0.7rem] text-emerald-300 mt-1">ดำเนินการแล้ว</p>
+                </div>
+                <div class="rounded-2xl bg-slate-800/60 border border-white/5 px-3 py-2.5">
+                  <p class="text-[0.7rem] text-slate-300/80 mb-1">ร้องเรียน/ร้องทุกข์</p>
+                  <p class="text-lg font-semibold text-white">2</p>
+                  <p class="text-[0.7rem] text-amber-300 mt-1">กำลังดำเนินการ</p>
+                </div>
+              </div>
+              <div class="rounded-2xl bg-slate-800/60 border border-white/5 px-3 py-3 flex items-center justify-between">
+                <div>
+                  <p class="text-[0.7rem] text-slate-300/80 mb-1">ความพึงพอใจโดยรวม</p>
+                  <p class="text-lg font-semibold text-white">4.7/5</p>
+                </div>
+                <div class="flex -space-x-1">
+                  <span class="w-6 h-6 rounded-full bg-obt-orange/80 border border-white/10"></span>
+                  <span class="w-6 h-6 rounded-full bg-sky-500/80 border border-white/10"></span>
+                  <span class="w-6 h-6 rounded-full bg-emerald-500/80 border border-white/10"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick links -->
+  <section id="quick-links" class="py-10 md:py-14 bg-[#f7f8fe]">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex items-center justify-between gap-4 mb-6">
+        <h2 class="section-title text-xl md:text-2xl font-bold text-[#1E3A8A]">ลิงก์ด่วน</h2>
+        <p class="hidden md:block text-sm text-slate-500">เข้าถึงบริการที่ใช้บ่อยได้อย่างรวดเร็ว</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <a href="contact.html" class="group relative block p-5 rounded-2xl bg-[#f7f8fe] border border-slate-200/80 hover:border-obt-orange hover:shadow-lg hover:shadow-obt-blue/5 transition-all">
+          <div class="flex items-center justify-between mb-3">
+            <span class="inline-flex items-center justify-center w-9 h-9 rounded-xl bg-[#F97316] text-white shadow-sm">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-18 8h18a2 2 0 002-2V8a2 2 0 00-2-2H3a2 2 0 00-2 2v6a2 2 0 002 2z"/></svg>
+            </span>
+            <span class="text-[0.7rem] font-medium uppercase tracking-wide text-[#F97316]/80">ออนไลน์</span>
+          </div>
+          <p class="font-semibold text-[#1E3A8A] mb-1">E-service / ติดต่อเรา</p>
+          <p class="text-sm text-slate-500 mb-3">ติดต่อราชการ สอบถามข้อมูล หรือแจ้งเรื่องร้องเรียน</p>
+          <span class="inline-flex items-center text-xs font-medium text-[#F97316] group-hover:translate-x-0.5 group-hover:underline underline-offset-2 transition-transform">
+            ไปยังแบบฟอร์มติดต่อ
+            <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </span>
+        </a>
+        <a href="#news" class="group relative block p-5 rounded-2xl bg-[#f7f8fe] border border-slate-200/80 hover:border-obt-orange hover:shadow-lg hover:shadow-obt-blue/5 transition-all">
+          <div class="flex items-center justify-between mb-3">
+            <span class="inline-flex items-center justify-center w-9 h-9 rounded-xl bg-[#1E3A8A]/10 text-[#1E3A8A] shadow-sm">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7h18M3 12h10M3 17h6"/></svg>
+            </span>
+            <span class="text-[0.7rem] font-medium uppercase tracking-wide text-[#1E3A8A]/70">บริการ</span>
+          </div>
+          <p class="font-semibold text-[#1E3A8A] mb-1">ข่าวประชาสัมพันธ์</p>
+          <p class="text-sm text-slate-500 mb-3">ข้อมูลข่าวสารและสวัสดิการในพื้นที่ตำบลลาดบัวขาว</p>
+          <span class="inline-flex items-center text-xs font-medium text-[#F97316] group-hover:translate-x-0.5 group-hover:underline underline-offset-2 transition-transform">
+            ดูรายละเอียด
+            <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </span>
+        </a>
+        <!-- รับเรื่องร้องทุกข์ quick-link removed -->
+        <a href="#gallery" class="group relative block p-5 rounded-2xl bg-gradient-to-br from-obt-blue/5 via-[#f7f8fe] to-obt-orange/5 border border-obt-orange/40 hover:border-obt-orange hover:shadow-lg hover:shadow-obt-orange/20 transition-all">
+          <div class="flex items-center justify-between mb-3">
+            <span class="inline-flex items-center justify-center w-9 h-9 rounded-xl bg-[#F7EBE6] text-[#F97316] shadow-sm">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h18M4 7v11a2 2 0 002 2h12a2 2 0 002-2V7M8 11l2 2 3-3 4 4"/></svg>
+            </span>
+            <span class="text-[0.7rem] font-medium uppercase tracking-wide text-[#F97316]/90">ภาพกิจกรรม</span>
+          </div>
+          <p class="font-semibold text-[#1E3A8A] mb-1">ประมวลภาพกิจกรรม</p>
+          <p class="text-sm text-slate-500 mb-3">ติดตามบรรยากาศกิจกรรมในชุมชนตำบลลาดบัวขาว</p>
+          <span class="inline-flex items-center text-xs font-medium text-[#F97316] group-hover:translate-x-0.5 group-hover:underline underline-offset-2 transition-transform">
+            ดูภาพกิจกรรม
+            <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ข่าวประชาสัมพันธ์ -->
+  <section id="news" class="py-10 md:py-14 bg-[#f7f8fe]">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex items-center justify-between gap-4 mb-6">
+        <h2 class="section-title text-xl md:text-2xl font-bold text-[#1E3A8A]">ข่าวประชาสัมพันธ์</h2>
+        <span class="hidden md:inline-flex items-center gap-2 text-xs font-medium text-emerald-700 bg-emerald-50 border border-emerald-100 rounded-full px-3 py-1">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+          อัปเดตล่าสุด
+        </span>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <article class="group bg-[#f7f8fe] rounded-2xl shadow-sm overflow-hidden border border-slate-200 hover:border-obt-orange/70 hover:shadow-md transition-all">
+          <div class="aspect-video bg-gradient-to-br from-obt-blue/15 via-slate-200 to-obt-orange/20 flex items-center justify-center text-slate-400 text-xs uppercase tracking-wide">
+            ภาพกิจกรรมอบรมผู้สูงอายุ
+          </div>
+          <div class="p-4 space-y-2">
+            <div class="flex items-center justify-between text-xs">
+              <span class="inline-flex items-center px-2 py-1 rounded-full bg-obt-blue/10 text-[#1E3A8A] font-medium" style="background-color: rgba(30,58,138,0.08);">ข่าวกิจกรรม</span>
+              <time class="text-slate-500">17 ก.พ. 2569</time>
+            </div>
+            <h3 class="font-semibold text-slate-900 leading-snug">
+              โครงการฝึกอบรมและพัฒนาศักยภาพผู้สูงอายุตำบลลาดบัวขาว ปีงบประมาณ 2569
+            </h3>
+            <p class="text-sm text-slate-600 line-clamp-2">
+              ส่งเสริมสุขภาพกายและใจ เพิ่มทักษะการเรียนรู้ตลอดชีวิตให้กับผู้สูงอายุในพื้นที่
+            </p>
+            <button class="mt-1 text-xs font-medium text-[#F97316] hover:underline group-hover:underline underline-offset-2 transition-colors" type="button">
+              อ่านรายละเอียดเพิ่มเติม
+            </button>
+          </div>
+        </article>
+        <article class="group bg-[#f7f8fe] rounded-2xl shadow-sm overflow-hidden border border-slate-200 hover:border-obt-orange/70 hover:shadow-md transition-all">
+          <div class="aspect-video bg-gradient-to-br from-sky-200 via-slate-200 to-obt-blue/20 flex items-center justify-center text-slate-400 text-xs uppercase tracking-wide">
+            ประชาสัมพันธ์ด้านการป้องกันทุจริต
+          </div>
+          <div class="p-4 space-y-2">
+            <div class="flex items-center justify-between text-xs">
+              <span class="inline-flex items-center px-2 py-1 rounded-full bg-sky-500/10 text-sky-700 font-medium">ประกาศสำคัญ</span>
+              <time class="text-slate-500">28 ม.ค. 2569</time>
+            </div>
+            <h3 class="font-semibold text-slate-900 leading-snug">
+              โครงการขับเคลื่อนค่าคะแนนดัชนีการรับรู้การทุจริต (CPI) ในพื้นที่ตำบล
+            </h3>
+            <p class="text-sm text-slate-600 line-clamp-2">
+              เชิญชวนประชาชนร่วมตอบแบบประเมินเพื่อยกระดับความโปร่งใสในการดำเนินงานภาครัฐ
+            </p>
+            <button class="mt-1 text-xs font-medium text-[#F97316] hover:underline group-hover:underline underline-offset-2 transition-colors" type="button">
+              อ่านรายละเอียดเพิ่มเติม
+            </button>
+          </div>
+        </article>
+        <article class="group bg-[#f7f8fe] rounded-2xl shadow-sm overflow-hidden border border-slate-200 hover:border-obt-orange/70 hover:shadow-md transition-all">
+          <div class="aspect-video bg-gradient-to-br from-emerald-200 via-slate-200 to-obt-orange/20 flex items-center justify-center text-slate-500 text-xs uppercase tracking-wide">
+            สวัสดิการและเบี้ยยังชีพ
+          </div>
+          <div class="p-4 space-y-2">
+            <div class="flex items-center justify-between text-xs">
+              <span class="inline-flex items-center px-2 py-1 rounded-full bg-emerald-500/10 text-emerald-700 font-medium">สวัสดิการสังคม</span>
+              <time class="text-slate-500">6 ต.ค. 2568</time>
+            </div>
+            <h3 class="font-semibold text-slate-900 leading-snug">
+              ประชาสัมพันธ์ข้อมูลสิทธิ์เบี้ยยังชีพผู้สูงอายุและผู้พิการประจำปี
+            </h3>
+            <p class="text-sm text-slate-600 line-clamp-2">
+              ตรวจสอบสิทธิ์และคุณสมบัติการลงทะเบียนรับเบี้ยยังชีพได้ที่งานสวัสดิการสังคม
+            </p>
+            <button class="mt-1 text-xs font-medium text-[#F97316] hover:underline group-hover:underline underline-offset-2 transition-colors" type="button">
+              อ่านรายละเอียดเพิ่มเติม
+            </button>
+          </div>
+        </article>
+      </div>
+      <div class="mt-6 text-center">
+        <button type="button" class="inline-flex items-center justify-center min-h-[44px] px-6 py-3 rounded-full bg-[#1E3A8A] text-white hover:bg-[#163068] font-medium text-sm shadow-md shadow-obt-blue/30">
+          ดูข่าวประชาสัมพันธ์ทั้งหมด
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ประกาศจัดซื้อจัดจ้าง -->
+  <section id="procurement" class="py-10 md:py-14 bg-[#f7f8fe]">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex items-center justify-between gap-4 mb-6">
+        <h2 class="section-title text-xl md:text-2xl font-bold text-[#1E3A8A]">ประกาศจัดซื้อจัดจ้าง</h2>
+        <p class="hidden md:block text-xs text-slate-500">ติดตามความเคลื่อนไหวด้านพัสดุและงบประมาณของ อบต.</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <article class="rounded-2xl bg-[#f7f8fe] border border-slate-200 hover:border-obt-orange/70 hover:shadow-md transition-all p-4 flex flex-col justify-between">
+          <div class="flex items-start gap-3">
+            <div class="mt-1" style="width:6px; height:40px; border-radius:9999px; background-color:#F97316;"></div>
+            <div>
+              <p class="text-xs text-slate-500 mb-1">เผยแพร่แผนการจัดซื้อจัดจ้าง</p>
+              <h3 class="font-semibold text-slate-900 mb-1">แผนการจัดซื้อจัดจ้างประจำปีงบประมาณ 2569</h3>
+              <p class="text-sm text-slate-600 line-clamp-2">
+                รายละเอียดแผนงานจัดซื้อจัดจ้างพัสดุและครุภัณฑ์ เพื่อพัฒนาพื้นที่และบริการประชาชนในตำบล
+              </p>
+            </div>
+          </div>
+          <div class="mt-3 flex items-center justify-between text-xs text-slate-500">
+            <span>ปรับปรุงล่าสุด: 4 ก.พ. 2569</span>
+            <button type="button" class="text-[#F97316] font-medium hover:underline">ดูรายละเอียด</button>
+          </div>
+        </article>
+        <article class="rounded-2xl bg-[#f7f8fe] border border-slate-200 hover:border-obt-orange/70 hover:shadow-md transition-all p-4 flex flex-col justify-between">
+          <div class="flex items-start gap-3">
+            <div class="mt-1" style="width:6px; height:40px; border-radius:9999px; background-color:#1E3A8A;"></div>
+            <div>
+              <p class="text-xs text-slate-500 mb-1">ประกาศประกวดราคา</p>
+              <h3 class="font-semibold text-slate-900 mb-1">โครงการจัดซื้อครุภัณฑ์และวัสดุอุปกรณ์ชุมชน</h3>
+              <p class="text-sm text-slate-600 line-clamp-2">
+                จัดซื้อครุภัณฑ์เพื่อสนับสนุนการพัฒนากลุ่มวิสาหกิจชุมชนและหน่วยงานในพื้นที่ตำบลลาดบัวขาว
+              </p>
+            </div>
+          </div>
+          <div class="mt-3 flex items-center justify-between text-xs text-slate-500">
+            <span>เผยแพร่: 17 มี.ค. 2568</span>
+            <button type="button" class="text-[#F97316] font-medium hover:underline">ดูรายละเอียด</button>
+          </div>
+        </article>
+        <article class="rounded-2xl bg-[#f7f8fe] border border-slate-200 hover:border-obt-orange/70 hover:shadow-md transition-all p-4 flex flex-col justify-between">
+          <div class="flex items-start gap-3">
+            <div class="mt-1" style="width:6px; height:40px; border-radius:9999px; background-color:#10B981;"></div>
+            <div>
+              <p class="text-xs text-slate-500 mb-1">ประกาศผู้ชนะการเสนอราคา</p>
+              <h3 class="font-semibold text-slate-900 mb-1">จัดซื้อเครื่องตัดหญ้าและเครื่องพ่นหมอกควัน</h3>
+              <p class="text-sm text-slate-600 line-clamp-2">
+                ผลการจัดซื้อครุภัณฑ์เพื่อสนับสนุนงานดูแลสิ่งแวดล้อมและป้องกันโรคในชุมชน
+              </p>
+            </div>
+          </div>
+          <div class="mt-3 flex items-center justify-between text-xs text-slate-500">
+            <span>เผยแพร่: 14 มี.ค. 2568</span>
+            <button type="button" class="text-[#F97316] font-medium hover:underline">ดูรายละเอียด</button>
+          </div>
+        </article>
+        <article class="rounded-2xl bg-gradient-to-br from-obt-blue/5 via-[#f7f8fe] to-obt-orange/10 border border-obt-orange/40 hover:border-obt-orange hover:shadow-md hover:shadow-obt-orange/20 transition-all p-4 flex flex-col justify-between">
+          <div class="flex items-start gap-3">
+            <div class="mt-1" style="width:6px; height:40px; border-radius:9999px; background-color:#F97316;"></div>
+            <div>
+              <p class="text-xs text-slate-500 mb-1">สรุปผลการจัดซื้อจัดจ้าง</p>
+              <h3 class="font-semibold text-slate-900 mb-1">ดูสรุปผลการจัดซื้อจัดจ้างทั้งหมด</h3>
+              <p class="text-sm text-slate-600">
+                รวบรวมผลการจัดซื้อจัดจ้างและการใช้จ่ายงบประมาณขององค์การบริหารส่วนตำบลลาดบัวขาว
+              </p>
+            </div>
+          </div>
+          <div class="mt-3 flex items-center justify-between text-xs text-slate-500">
+            <span>อัปเดตรายเดือน</span>
+            <button type="button" class="text-[#F97316] font-medium hover:underline">ดูสรุปผล</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ประมวลภาพกิจกรรม -->
+  <section id="gallery" class="py-10 md:py-14 bg-[#f7f8fe]">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex items-center justify-between gap-4 mb-6">
+        <h2 class="section-title text-xl md:text-2xl font-bold text-[#1E3A8A]">ประมวลภาพกิจกรรม</h2>
+        <p class="hidden md:block text-xs text-slate-500">บรรยากาศกิจกรรมของชุมชนและหน่วยงานในตำบลลาดบัวขาว</p>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+        <figure class="relative group overflow-hidden rounded-2xl bg-slate-200 shadow-sm">
+          <img src="../activities.png" alt="กิจกรรมชุมชน 1" class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          <figcaption class="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-slate-900/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity text-xs text-white flex items-end p-2">
+            กิจกรรมอบรมผู้สูงอายุ
+          </figcaption>
+        </figure>
+        <figure class="relative group overflow-hidden rounded-2xl bg-slate-200 shadow-sm">
+          <img src="../activities.png" alt="กิจกรรมชุมชน 2" class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          <figcaption class="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-slate-900/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity text-xs text-white flex items-end p-2">
+            โครงการหนูน้อยปลูกผัก
+          </figcaption>
+        </figure>
+        <figure class="relative group overflow-hidden rounded-2xl bg-slate-200 shadow-sm">
+          <img src="../activities.png" alt="กิจกรรมชุมชน 3" class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          <figcaption class="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-slate-900/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity text-xs text-white flex items-end p-2">
+            กิจกรรมวันสำคัญทางศาสนา
+          </figcaption>
+        </figure>
+        <figure class="relative group overflow-hidden rounded-2xl bg-slate-200 shadow-sm">
+          <img src="../activities.png" alt="กิจกรรมชุมชน 4" class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          <figcaption class="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-slate-900/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity text-xs text-white flex items-end p-2">
+            โครงการส่งเสริมวินัยจราจร
+          </figcaption>
+        </figure>
+        <figure class="relative group overflow-hidden rounded-2xl bg-slate-200 shadow-sm md:col-span-2">
+          <img src="../activities.png" alt="กิจกรรมชุมชน 5" class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          <figcaption class="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-slate-900/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity text-xs text-white flex items-end p-3">
+            รวมภาพกิจกรรมเด่นประจำปี
+          </figcaption>
+        </figure>
+        <figure class="relative group overflow-hidden rounded-2xl bg-slate-200 shadow-sm md:col-span-2">
+          <img src="../activities.png" alt="กิจกรรมชุมชน 6" class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          <figcaption class="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-slate-900/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity text-xs text-white flex items-end p-3">
+            กิจกรรมด้านสิ่งแวดล้อมและสุขภาพ
+          </figcaption>
+        </figure>
+      </div>
+      <div class="mt-6 text-center">
+        <button id="gallery-all" type="button" class="inline-flex items-center justify-center min-h-[44px] px-6 py-3 rounded-full bg-[#1E3A8A] text-white hover:bg-[#163068] font-medium text-sm shadow-md shadow-obt-blue/30">
+          ดูประมวลภาพกิจกรรมทั้งหมด
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 text-white pt-10 md:pt-14 pb-8 mt-4">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-[1.5fr,1fr] gap-10 md:gap-8 items-start">
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <div>
+              <img src="../images/logo.png" alt="ตราอบต." class="w-10 h-10 rounded-full p-0.5 object-contain shadow-md shadow-obt-blue/40" style="background-color: #294490;" onerror="this.style.display='none'" />
+            </div>
+            <div>
+              <h3 class="font-bold text-lg">องค์การบริหารส่วนตำบลลาดบัวขาว</h3>
+              <p class="text-xs text-slate-300 mt-0.5">อำเภอบ้านโป่ง จังหวัดราชบุรี 70110</p>
+            </div>
+          </div>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            หมู่ที่ 4 ตำบลลาดบัวขาว อำเภอบ้านโป่ง จังหวัดราชบุรี 70110<br />
+            โทรศัพท์ 0-3274-3118
+          </p>
+          <p class="text-slate-300 text-sm mt-2">
+            อีเมล :
+            <a href="mailto:saraban@ladbuakhaw.go.th" class="text-[#F97316] hover:underline">saraban@ladbuakhaw.go.th</a>
+          </p>
+        </div>
+        <div class="space-y-3 text-sm text-slate-300">
+          <p class="font-semibold text-white">เบอร์ต่อสายภายใน</p>
+          <p>สำนักปลัด : 0-3274-3118 ต่อ 103</p>
+          <p>กองคลัง : 0-3274-3118 ต่อ 105</p>
+          <p>กองช่าง : 0-3274-3118 ต่อ 107</p>
+          <p>กองการศึกษาฯ : 0-3274-3118 ต่อ 109</p>
+          <p>งานป้องกันฯ : 0-3274-3118 ต่อ 114</p>
+        </div>
+      </div>
+      <div id="privacy" class="mt-8 pt-6 border-t border-slate-700 flex flex-col sm:flex-row gap-4 justify-between items-center text-xs md:text-sm text-slate-400">
+        <a href="#privacy" class="hover:text-[#F97316]">นโยบายการคุ้มครองข้อมูลส่วนบุคคล</a>
+        <p>ลิขสิทธิ์ © 2560–2569 องค์การบริหารส่วนตำบลลาดบัวขาว จังหวัดราชบุรี</p>
+      </div>
+    </div>
+  </footer>
+
+  <button id="back-to-top" type="button" class="fixed bottom-6 right-6 w-12 h-12 rounded-full bg-obt-orange text-white shadow-lg opacity-0 pointer-events-none transition-opacity hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-obt-orange touch-target flex items-center justify-center" style="background-color: #F97316;" aria-label="กลับขึ้นด้านบน">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg>
+  </button>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

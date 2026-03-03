@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ติดต่ออบต. - อบต. ลาดบัวขาว</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../output.css" />
+</head>
+<body class="font-sans text-slate-900 bg-[#f7f8fe] antialiased" style="font-family: 'Noto Sans Thai', sans-serif;">
+  <header class="sticky top-0 z-50 bg-obt-blue text-white shadow-lg" style="background-color: #294490;">
+    <div class="max-w-6xl mx-auto px-4 flex items-center justify-between h-16 md:h-18">
+      <a href="home.html" class="flex items-center gap-2 touch-target justify-center">
+        <img src="../images/logo.png" alt="ตราอบต." class="w-9 h-9 rounded-full p-0.5 object-contain" style="background-color: #294490;" onerror="this.style.display='none'" />
+        <span class="text-lg md:text-xl font-bold tracking-tight">อบต. ลาดบัวขาว</span>
+      </a>
+      <button id="menu-toggle" type="button" class="md:hidden touch-target flex items-center justify-center rounded-lg hover:bg-white/10" aria-label="เปิดเมนู">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+      <nav id="main-nav" class="hidden md:flex items-center gap-1 text-sm">
+        <a href="home.html" class="px-3 py-2 rounded-lg bg-white/15 font-medium">หน้าแรก</a>
+        <a href="personel.html" class="px-3 py-2 rounded-lg hover:bg-white/10">บุคลากร</a>
+        <div class="relative group">
+          <button type="button" class="px-3 py-2 rounded-lg hover:bg-white/10 flex items-center gap-2">บริการประชาชน
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="absolute right-0 top-full z-50 w-56 bg-white text-slate-900 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-opacity duration-150 ease-out">
+            <a href="home.html#news" class="block px-4 py-2 hover:bg-slate-100">ประชาสัมพันธ์</a>
+            <a href="home.html#gallery" class="block px-4 py-2 hover:bg-slate-100">ประมวลภาพกิจกรรม</a>
+          </div>
+        </div>
+        <a id="contact-nav" href="contact.html" class="ml-2 px-4 py-2 rounded-full bg-obt-orange hover:bg-orange-600 font-medium shadow-sm">ติดต่ออบต.</a>
+      </nav>
+    </div>
+    <div id="mobile-menu" class="fixed inset-0 z-40 hidden md:hidden">
+      <div id="mobile-menu-backdrop" class="absolute inset-0 bg-slate-900/50 opacity-0 transition-opacity duration-300"></div>
+      <div id="mobile-menu-panel" class="absolute inset-y-0 left-0 w-72 max-w-[80vw] shadow-2xl transform -translate-x-full transition-transform duration-300 flex flex-col" style="background-color: #1E3A8A;">
+        <!-- Header -->
+        <div class="flex items-center justify-between px-4 py-4 border-b border-white/10">
+          <div class="flex items-center gap-3">
+            <img src="../images/logo.png" alt="ตราอบต." class="w-10 h-10 rounded-full p-0.5 object-contain" style="background-color: #294490;" onerror="this.style.display='none'" />
+            <span class="text-white font-semibold text-base">อบต. ลาดบัวขาว</span>
+          </div>
+          <button id="mobile-menu-close" type="button" class="touch-target flex items-center justify-center w-10 h-10 rounded-lg hover:bg-white/10 text-white transition" aria-label="ปิดเมนู">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+        <!-- Navigation -->
+        <nav class="flex-1 overflow-y-auto py-4">
+          <div class="space-y-1">
+            <a href="home.html" class="block px-6 py-3 text-white hover:bg-white/10 touch-target transition">หน้าหลัก</a>
+            <a href="personel.html" class="block px-6 py-3 text-white hover:bg-white/10 touch-target transition">บุคลากร</a>
+            <button id="mobile-services-toggle" type="button" class="block w-full text-left px-6 py-3 flex items-center justify-between text-white hover:bg-white/10 touch-target transition">
+              <span>บริการประชาชน</span>
+              <svg id="mobile-services-arrow" class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div id="mobile-services-submenu" class="hidden bg-white/5">
+              <a href="home.html#news" class="block px-10 py-2.5 text-white/90 hover:bg-white/10 text-sm transition">ประชาสัมพันธ์</a>
+              <a href="home.html#gallery" class="block px-10 py-2.5 text-white/90 hover:bg-white/10 text-sm transition">ประมวลภาพกิจกรรม</a>
+            </div>
+            <a href="home.html#ita" class="block px-6 py-3 text-white hover:bg-white/10 touch-target transition">ITA</a>
+            <div class="relative">
+              <button id="mobile-contact-toggle" type="button" class="flex items-center justify-between w-full px-6 py-3 text-white hover:bg-white/10 touch-target transition">
+                <span>ติดต่ออบต.</span>
+                <svg id="mobile-contact-arrow" class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </button>
+              <div id="mobile-contact-submenu" class="hidden bg-white/5">
+                <a href="contact.html" class="block px-10 py-2.5 text-white/90 hover:bg-white/10 text-sm transition">ข้อมูลติดต่อ</a>
+                <a href="contact.html#complaint" class="block px-10 py-2.5 text-white/90 hover:bg-white/10 text-sm transition">ร้องเรียน/ร้องทุกข์</a>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 py-10 md:py-14">
+    <h1 id="complaint" class="text-2xl md:text-3xl font-bold text-obt-blue mb-8">ติดต่ออบต. ลาดบัวขาว</h1>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="bg-[#f7f8fe] rounded-xl border border-slate-200 p-6 shadow-sm">
+        <h2 class="text-lg font-semibold text-obt-blue mb-4">ที่อยู่</h2>
+        <p class="text-slate-600">องค์การบริหารส่วนตำบลลาดบัวขาว<br />หมู่ที่ 4 ตำบลลาดบัวขาว อำเภอบ้านโป่ง จังหวัดราชบุรี 70110</p>
+      </div>
+      <div class="bg-[#f7f8fe] rounded-xl border border-slate-200 p-6 shadow-sm">
+        <h2 class="text-lg font-semibold text-obt-blue mb-4">ช่องทางติดต่อ</h2>
+        <ul class="space-y-2 text-slate-600">
+          <li><strong>โทรศัพท์:</strong> <a href="tel:032743118" class="text-obt-orange hover:underline">0-3274-3118</a></li>
+          <li><strong>อีเมล:</strong> <a href="mailto:saraban@ladbuakhaw.go.th" class="text-obt-orange hover:underline">saraban@ladbuakhaw.go.th</a></li>
+          <li><a href="https://www.facebook.com/อบต.ลาดบัวขาว-จ.ราชบุรี-1259625190771810/" class="text-obt-orange hover:underline" target="_blank" rel="noopener">Facebook อบต. ลาดบัวขาว จ.ราชบุรี</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="mt-8 bg-[#f7f8fe] rounded-xl border border-slate-200 p-6 shadow-sm">
+      <h2 class="text-lg font-semibold text-obt-blue mb-4">เบอร์ต่อสายภายใน</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-slate-600">
+        <p>สำนักปลัด : 0-3274-3118 ต่อ 103</p>
+        <p>กองคลัง : 0-3274-3118 ต่อ 105</p>
+        <p>กองช่าง : 0-3274-3118 ต่อ 107</p>
+        <p>กองการศึกษาฯ : 0-3274-3118 ต่อ 109</p>
+        <p>โทรสาร : 0-3274-3118 ต่อ 109</p>
+        <p>งานป้องกันฯ : 0-3274-3118 ต่อ 114</p>
+      </div>
+    </div>
+    <!-- Contact action buttons removed as requested -->
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 text-white pt-10 md:pt-14 pb-8 mt-4">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-[1.5fr,1fr] gap-10 md:gap-8 items-start">
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <div>
+              <img src="../images/logo.png" alt="ตราอบต." class="w-10 h-10 rounded-full p-0.5 object-contain shadow-md shadow-obt-blue/40" style="background-color: #294490;" onerror="this.style.display='none'" />
+            </div>
+            <div>
+              <h3 class="font-bold text-lg">องค์การบริหารส่วนตำบลลาดบัวขาว</h3>
+              <p class="text-xs text-slate-300 mt-0.5">อำเภอบ้านโป่ง จังหวัดราชบุรี 70110</p>
+            </div>
+          </div>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            หมู่ที่ 4 ตำบลลาดบัวขาว อำเภอบ้านโป่ง จังหวัดราชบุรี 70110<br />
+            โทรศัพท์ 0-3274-3118
+          </p>
+          <p class="text-slate-300 text-sm mt-2">
+            อีเมล :
+            <a href="mailto:saraban@ladbuakhaw.go.th" class="text-[#F97316] hover:underline">saraban@ladbuakhaw.go.th</a>
+          </p>
+        </div>
+        <div class="space-y-3 text-sm text-slate-300">
+          <p class="font-semibold text-white">เบอร์ต่อสายภายใน</p>
+          <p>สำนักปลัด : 0-3274-3118 ต่อ 103</p>
+          <p>กองคลัง : 0-3274-3118 ต่อ 105</p>
+          <p>กองช่าง : 0-3274-3118 ต่อ 107</p>
+          <p>กองการศึกษาฯ : 0-3274-3118 ต่อ 109</p>
+          <p>งานป้องกันฯ : 0-3274-3118 ต่อ 114</p>
+        </div>
+      </div>
+      <div id="privacy" class="mt-8 pt-6 border-t border-slate-700 flex flex-col sm:flex-row gap-4 justify-between items-center text-xs md:text-sm text-slate-400">
+        <a href="#privacy" class="hover:text-[#F97316]">นโยบายการคุ้มครองข้อมูลส่วนบุคคล</a>
+        <p>ลิขสิทธิ์ © 2560–2569 องค์การบริหารส่วนตำบลลาดบัวขาว จังหวัดราชบุรี</p>
+      </div>
+    </div>
+  </footer>
+
+  <button id="back-to-top" type="button" class="fixed bottom-6 right-6 w-12 h-12 rounded-full bg-obt-orange text-white shadow-lg opacity-0 pointer-events-none transition-opacity hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-obt-orange touch-target flex items-center justify-center" style="background-color: #F97316;" aria-label="กลับขึ้นด้านบน">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg>
+  </button>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
