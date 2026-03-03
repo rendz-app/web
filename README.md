@@ -6,19 +6,19 @@
 
 ```
 c:\web\
-├── index.html       # redirect ไปหน้าแรก (pages/home.html)
+├── index.html       # redirect ไปหน้าแรก (pages/index.html)
 ├── js/
 │   └── main.js      # เมนูมือถือ, ปุ่มกลับขึ้นบน
 ├── images/          # รูปโลโก้ / ภาพกิจกรรม (ใส่ไฟล์ตามต้องการ)
 ├── pages/
-│   ├── home.html    # หน้าแรก (Home) — Hero, ลิงก์ด่วน, ข่าว, ประกาศ, ประมวลภาพ
+│   ├── index.html   # หน้าแรก (Home) — Hero, ลิงก์ด่วน, ข่าว, ประกาศ, ประมวลภาพ
 │   └── contact.html # ติดต่ออบต.
 └── README.md
 ```
 
 ## การรัน / เปิดดู
 
-- เปิดไฟล์ `index.html` ในเบราว์เซอร์จะถูกนำไปหน้าแรก `pages/home.html` อัตโนมัติ หรือเปิด `pages/home.html` โดยตรง
+- เปิดไฟล์ `index.html` ในเบราว์เซอร์จะถูกนำไปหน้าแรก `pages/index.html` อัตโนมัติ หรือเปิด `pages/index.html` โดยตรง
 - หรือใช้ Live Server ใน VS Code / Cursor เพื่อรัน local server (แนะนำถ้าต้องการทดสอบลิงก์และ path)
 
 ## เทคโนโลยี
