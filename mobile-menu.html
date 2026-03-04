@@ -1,0 +1,41 @@
+<div id="mobile-menu" class="fixed inset-0 z-40 hidden md:hidden">
+  <div id="mobile-menu-backdrop" class="absolute inset-0 bg-slate-900/50 opacity-0 transition-opacity duration-300"></div>
+  <div id="mobile-menu-panel" class="absolute inset-y-0 left-0 w-72 max-w-[80vw] shadow-2xl transform -translate-x-full transition-transform duration-300 flex flex-col" style="background-color: #1E3A8A;">
+    <!-- Header -->
+    <div class="flex items-center justify-between px-4 py-4 border-b border-white/10">
+      <div class="flex items-center gap-3">
+        <img src="images/logo.png" alt="ตราอบต." class="w-10 h-10 rounded-full p-0.5 object-contain" style="background-color: #1E3A8A;" onerror="this.style.display='none'" />
+        <span class="text-white font-semibold text-base">อบต. ลาดบัวขาว</span>
+      </div>
+      <button id="mobile-menu-close" type="button" class="touch-target flex items-center justify-center w-10 h-10 rounded-lg hover:bg-white/10 text-white transition" aria-label="ปิดเมนู">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <!-- Navigation -->
+    <nav class="flex-1 overflow-y-auto py-4">
+      <div class="space-y-1">
+        <a href="index.html" class="block px-6 py-3 text-white hover:bg-white/10 touch-target transition">หน้าหลัก</a>
+        <a href="personel.html" class="block px-6 py-3 text-white hover:bg-white/10 touch-target transition">บุคลากร</a>
+        <button id="mobile-services-toggle" type="button" class="block w-full text-left px-6 py-3 flex items-center justify-between text-white hover:bg-white/10 touch-target transition">
+          <span>บริการประชาชน</span>
+          <svg id="mobile-services-arrow" class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div id="mobile-services-submenu" class="hidden bg-white/5">
+          <a href="index.html#news" class="block px-10 py-2.5 text-white/90 hover:bg-white/10 text-sm transition">ประชาสัมพันธ์</a>
+          <a href="index.html#gallery" class="block px-10 py-2.5 text-white/90 hover:bg-white/10 text-sm transition">ประมวลภาพกิจกรรม</a>
+        </div>
+        <a href="index.html#ita" class="block px-6 py-3 text-white hover:bg-white/10 touch-target transition">ITA</a>
+        <div class="relative">
+          <button id="mobile-contact-toggle" type="button" class="flex items-center justify-between w-full px-6 py-3 text-white hover:bg-white/10 touch-target transition">
+            <span>ติดต่ออบต.</span>
+            <svg id="mobile-contact-arrow" class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div id="mobile-contact-submenu" class="hidden bg-white/5">
+            <a href="contact.html" class="block px-10 py-2.5 text-white/90 hover:bg-white/10 text-sm transition">ข้อมูลติดต่อ</a>
+            <a href="contact.html#complaint" class="block px-10 py-2.5 text-white/90 hover:bg-white/10 text-sm transition">ร้องเรียน/ร้องทุกข์</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+</div>

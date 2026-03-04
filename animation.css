@@ -1,0 +1,13 @@
+/* Animation utilities for on-load text */
+@keyframes fadeUp {
+  0% { opacity: 0; transform: translateY(12px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.animate-on-load {
+  opacity: 0;
+  transform: translateY(12px);
+  animation: fadeUp 700ms ease-out forwards;
+  animation-delay: var(--delay, 0s);
+}
+/* Support fallback for explicit --delay usage */
+.animate-on-load[data-delay] { animation-delay: var(--delay, 0s); }
