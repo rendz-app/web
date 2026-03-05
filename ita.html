@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="output.css" />
+    <link rel="stylesheet" href="animation.css" />
     <link rel="icon" href="images/logo.png" />
     
     <style>
@@ -62,15 +63,7 @@
       <nav id="main-nav" class="hidden md:flex items-center gap-1 text-sm">
         <a href="index.html" class="px-3 py-2 rounded-lg hover:bg-white/10">หน้าแรก</a>
         <a href="personel.html" class="px-3 py-2 rounded-lg hover:bg-white/10">บุคลากร</a>
-        <div class="relative group">
-          <button type="button" class="px-3 py-2 rounded-lg hover:bg-white/10 flex items-center gap-2">บริการประชาชน
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-          </button>
-          <div class="absolute right-0 top-full z-50 w-56 bg-white text-slate-900 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-opacity duration-150 ease-out">
-            <a href="index.html#news" class="block px-4 py-2 hover:bg-slate-100">ประชาสัมพันธ์</a>
-            <a href="pr.html" class="block px-4 py-2 hover:bg-slate-100">ประมวลภาพกิจกรรม</a>
-          </div>
-        </div>
+        <a href="pr.html" class="px-3 py-2 rounded-lg hover:bg-white/10">ประมวลภาพกิจกรรม</a>
         <a href="ita.html" class="px-3 py-2 rounded-lg bg-white/15 font-medium">ITA</a>
         <a id="contact-nav" href="contact.html" class="ml-2 px-4 py-2 rounded-full bg-obt-orange hover:bg-orange-600 font-medium shadow-md" style="background-color: #F97316;">ติดต่ออบต.</a>
       </nav>
@@ -93,25 +86,9 @@
           <div class="space-y-1">
             <a href="index.html" class="block px-6 py-3 text-white hover:bg-white/10 touch-target transition">หน้าหลัก</a>
             <a href="personel.html" class="block px-6 py-3 text-white hover:bg-white/10 touch-target transition">บุคลากร</a>
-            <button id="mobile-services-toggle" type="button" class="block w-full text-left px-6 py-3 flex items-center justify-between text-white hover:bg-white/10 touch-target transition">
-              <span>บริการประชาชน</span>
-              <svg id="mobile-services-arrow" class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-            </button>
-            <div id="mobile-services-submenu" class="hidden bg-white/5">
-              <a href="index.html#news" class="block px-10 py-2.5 text-white/90 hover:bg-white/10 text-sm transition">ประชาสัมพันธ์</a>
-              <a href="pr.html" class="block px-10 py-2.5 text-white/90 hover:bg-white/10 text-sm transition">ประมวลภาพกิจกรรม</a>
-            </div>
+            <a href="pr.html" class="block px-6 py-3 text-white hover:bg-white/10 touch-target transition">ประมวลภาพกิจกรรม</a>
             <a href="ita.html" class="block px-6 py-3 text-white bg-white/10 touch-target transition font-medium">ITA</a>
-            <div class="relative">
-              <button id="mobile-contact-toggle" type="button" class="flex items-center justify-between w-full px-6 py-3 text-white hover:bg-white/10 touch-target transition">
-                <span>ติดต่ออบต.</span>
-                <svg id="mobile-contact-arrow" class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-              </button>
-              <div id="mobile-contact-submenu" class="hidden bg-white/5">
-                <a href="contact.html" class="block px-10 py-2.5 text-white/90 hover:bg-white/10 text-sm transition">ข้อมูลติดต่อ</a>
-                <a href="contact.html#complaint" class="block px-10 py-2.5 text-white/90 hover:bg-white/10 text-sm transition">ร้องเรียน/ร้องทุกข์</a>
-              </div>
-            </div>
+            <a href="contact.html" class="block px-6 py-3 text-white hover:bg-white/10 touch-target transition">ติดต่ออบต.</a>
           </div>
         </nav>
       </div>

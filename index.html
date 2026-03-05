@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="output.css" />
+  <link rel="stylesheet" href="animation.css" />
 </head>
 <body class="font-sans text-slate-900 bg-[#f7f8fe] antialiased" style="font-family: 'Noto Sans Thai', sans-serif;">
   <!-- Header -->
@@ -23,15 +24,7 @@
       <nav id="main-nav" class="hidden md:flex items-center gap-1 text-sm">
         <a href="index.html" class="px-3 py-2 rounded-lg bg-white/15 font-medium">หน้าแรก</a>
         <a href="personel.html" class="px-3 py-2 rounded-lg hover:bg-white/10">บุคลากร</a>
-        <div class="relative group">
-          <button type="button" class="px-3 py-2 rounded-lg hover:bg-white/10 flex items-center gap-2">บริการประชาชน
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-          </button>
-          <div class="absolute right-0 top-full z-50 w-56 bg-white text-slate-900 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-opacity duration-150 ease-out">
-            <a href="index.html#news" class="block px-4 py-2 hover:bg-slate-100">ประชาสัมพันธ์</a>
-            <a href="pr.html" class="block px-4 py-2 hover:bg-slate-100">ประมวลภาพกิจกรรม</a>
-          </div>
-        </div>
+        <a href="pr.html" class="px-3 py-2 rounded-lg hover:bg-white/10">ประมวลภาพกิจกรรม</a>
         <a href="ita.html" class="px-3 py-2 rounded-lg hover:bg-white/10">ITA</a>
         <a id="contact-nav" href="contact.html" class="ml-2 px-4 py-2 rounded-full bg-obt-orange hover:bg-orange-600 font-medium shadow-md" style="background-color: #F97316;">ติดต่ออบต.</a>
       </nav>
@@ -54,25 +47,9 @@
           <div class="space-y-1">
             <a href="index.html" class="block px-6 py-3 text-white hover:bg-white/10 touch-target transition">หน้าหลัก</a>
             <a href="personel.html" class="block px-6 py-3 text-white hover:bg-white/10 touch-target transition">บุคลากร</a>
-            <button id="mobile-services-toggle" type="button" class="block w-full text-left px-6 py-3 flex items-center justify-between text-white hover:bg-white/10 touch-target transition">
-              <span>บริการประชาชน</span>
-              <svg id="mobile-services-arrow" class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-            </button>
-            <div id="mobile-services-submenu" class="hidden bg-white/5">
-              <a href="index.html#news" class="block px-10 py-2.5 text-white/90 hover:bg-white/10 text-sm transition">ประชาสัมพันธ์</a>
-              <a href="pr.html" class="block px-10 py-2.5 text-white/90 hover:bg-white/10 text-sm transition">ประมวลภาพกิจกรรม</a>
-            </div>
+            <a href="pr.html" class="block px-6 py-3 text-white hover:bg-white/10 touch-target transition">ประมวลภาพกิจกรรม</a>
             <a href="ita.html" class="block px-6 py-3 text-white hover:bg-white/10 touch-target transition">ITA</a>
-            <div class="relative">
-              <button id="mobile-contact-toggle" type="button" class="flex items-center justify-between w-full px-6 py-3 text-white hover:bg-white/10 touch-target transition">
-                <span>ติดต่ออบต.</span>
-                <svg id="mobile-contact-arrow" class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-              </button>
-              <div id="mobile-contact-submenu" class="hidden bg-white/5">
-                <a href="contact.html" class="block px-10 py-2.5 text-white/90 hover:bg-white/10 text-sm transition">ข้อมูลติดต่อ</a>
-                <a href="contact.html#complaint" class="block px-10 py-2.5 text-white/90 hover:bg-white/10 text-sm transition">ร้องเรียน/ร้องทุกข์</a>
-              </div>
-            </div>
+            <a href="contact.html" class="block px-6 py-3 text-white hover:bg-white/10 touch-target transition">ติดต่ออบต.</a>
           </div>
         </nav>
       </div>
@@ -107,22 +84,22 @@
             ติดต่ออบต. ลาดบัวขาว
           </a>
         </div>
-        <dl class="grid grid-cols-3 gap-3 text-xs md:text-sm text-slate-100/90">
-          <div class="rounded-2xl bg-white/5 border border-white/10 px-3 py-2">
+        <dl class="grid grid-cols-3 gap-3 text-xs md:text-sm text-slate-100/90 animate-fade-up delay-400">
+          <div class="rounded-2xl bg-white/5 border border-white/10 px-3 py-2 hover-lift">
             <dt class="text-[0.7rem] uppercase tracking-wide text-slate-200/80">หมู่บ้าน</dt>
             <dd class="font-semibold text-base md:text-lg">15</dd>
           </div>
-          <div class="rounded-2xl bg-white/5 border border-white/10 px-3 py-2">
+          <div class="rounded-2xl bg-white/5 border border-white/10 px-3 py-2 hover-lift">
             <dt class="text-[0.7rem] uppercase tracking-wide text-slate-200/80">ประชากร (ประมาณ)</dt>
             <dd class="font-semibold text-base md:text-lg">7,000+</dd>
           </div>
-          <div class="rounded-2xl bg-white/5 border border-white/10 px-3 py-2">
+          <div class="rounded-2xl bg-white/5 border border-white/10 px-3 py-2 hover-lift">
             <dt class="text-[0.7rem] uppercase tracking-wide text-slate-200/80">เวลาราชการ</dt>
             <dd class="font-semibold text-base md:text-lg">จันทร์–ศุกร์</dd>
           </div>
         </dl>
       </div>
-      <div class="hidden md:block">
+      <div class="hidden md:block animate-fade-in-right delay-200">
         <div class="relative mx-auto max-w-md">
           <div class="absolute -inset-1 rounded-3xl bg-gradient-to-br from-obt-orange to-sky-400 opacity-70 blur-xl"></div>
           <div class="relative rounded-3xl bg-slate-900/70 border border-white/10 overflow-hidden shadow-2xl backdrop-blur">
@@ -177,12 +154,12 @@
   <!-- Quick links -->
   <section id="quick-links" class="py-10 md:py-14 bg-[#f7f8fe]">
     <div class="max-w-6xl mx-auto px-4">
-      <div class="flex items-center justify-between gap-4 mb-6">
+      <div class="flex items-center justify-between gap-4 mb-6 animate-fade-up">
         <h2 class="section-title text-xl md:text-2xl font-bold text-[#1E3A8A]">ลิงก์ด่วน</h2>
         <p class="hidden md:block text-sm text-slate-500">เข้าถึงบริการที่ใช้บ่อยได้อย่างรวดเร็ว</p>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <a href="contact.html" class="group relative block p-5 rounded-2xl bg-[#f7f8fe] border border-slate-200/80 hover:border-obt-orange hover:shadow-lg hover:shadow-obt-blue/5 transition-all">
+        <a href="contact.html" class="group relative block p-5 rounded-2xl bg-[#f7f8fe] border border-slate-200/80 hover:border-obt-orange hover:shadow-lg hover:shadow-obt-blue/5 transition-all animate-scale-in delay-100 hover-lift">
           <div class="flex items-center justify-between mb-3">
             <span class="inline-flex items-center justify-center w-9 h-9 rounded-xl bg-[#F97316] text-white shadow-sm">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-18 8h18a2 2 0 002-2V8a2 2 0 00-2-2H3a2 2 0 00-2 2v6a2 2 0 002 2z"/></svg>
@@ -196,7 +173,7 @@
             <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
           </span>
         </a>
-        <a href="#news" class="group relative block p-5 rounded-2xl bg-[#f7f8fe] border border-slate-200/80 hover:border-obt-orange hover:shadow-lg hover:shadow-obt-blue/5 transition-all">
+        <a href="#news" class="group relative block p-5 rounded-2xl bg-[#f7f8fe] border border-slate-200/80 hover:border-obt-orange hover:shadow-lg hover:shadow-obt-blue/5 transition-all animate-scale-in delay-200 hover-lift">
           <div class="flex items-center justify-between mb-3">
             <span class="inline-flex items-center justify-center w-9 h-9 rounded-xl bg-[#1E3A8A]/10 text-[#1E3A8A] shadow-sm">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7h18M3 12h10M3 17h6"/></svg>
@@ -211,7 +188,7 @@
           </span>
         </a>
         <!-- รับเรื่องร้องทุกข์ quick-link removed -->
-        <a href="#gallery" class="group relative block p-5 rounded-2xl bg-gradient-to-br from-obt-blue/5 via-[#f7f8fe] to-obt-orange/5 border border-obt-orange/40 hover:border-obt-orange hover:shadow-lg hover:shadow-obt-orange/20 transition-all">
+        <a href="#gallery" class="group relative block p-5 rounded-2xl bg-gradient-to-br from-obt-blue/5 via-[#f7f8fe] to-obt-orange/5 border border-obt-orange/40 hover:border-obt-orange hover:shadow-lg hover:shadow-obt-orange/20 transition-all animate-scale-in delay-300 hover-lift">
           <div class="flex items-center justify-between mb-3">
             <span class="inline-flex items-center justify-center w-9 h-9 rounded-xl bg-[#F7EBE6] text-[#F97316] shadow-sm">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h18M4 7v11a2 2 0 002 2h12a2 2 0 002-2V7M8 11l2 2 3-3 4 4"/></svg>
@@ -232,7 +209,7 @@
   <!-- ข่าวประชาสัมพันธ์ -->
   <section id="news" class="py-10 md:py-14 bg-[#f7f8fe]">
     <div class="max-w-6xl mx-auto px-4">
-      <div class="flex items-center justify-between gap-4 mb-6">
+      <div class="flex items-center justify-between gap-4 mb-6 animate-fade-up">
         <h2 class="section-title text-xl md:text-2xl font-bold text-[#1E3A8A]">ข่าวประชาสัมพันธ์</h2>
         <span class="hidden md:inline-flex items-center gap-2 text-xs font-medium text-emerald-700 bg-emerald-50 border border-emerald-100 rounded-full px-3 py-1">
           <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
@@ -240,7 +217,7 @@
         </span>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <article class="group bg-[#f7f8fe] rounded-2xl shadow-sm overflow-hidden border border-slate-200 hover:border-obt-orange/70 hover:shadow-md transition-all">
+        <article class="group bg-[#f7f8fe] rounded-2xl shadow-sm overflow-hidden border border-slate-200 hover:border-obt-orange/70 hover:shadow-md transition-all animate-fade-up delay-100 hover-lift">
           <div class="aspect-video bg-gradient-to-br from-obt-blue/15 via-slate-200 to-obt-orange/20 flex items-center justify-center text-slate-400 text-xs uppercase tracking-wide">
             ภาพกิจกรรมอบรมผู้สูงอายุ
           </div>
@@ -260,7 +237,7 @@
             </button>
           </div>
         </article>
-        <article class="group bg-[#f7f8fe] rounded-2xl shadow-sm overflow-hidden border border-slate-200 hover:border-obt-orange/70 hover:shadow-md transition-all">
+        <article class="group bg-[#f7f8fe] rounded-2xl shadow-sm overflow-hidden border border-slate-200 hover:border-obt-orange/70 hover:shadow-md transition-all animate-fade-up delay-200 hover-lift">
           <div class="aspect-video bg-gradient-to-br from-sky-200 via-slate-200 to-obt-blue/20 flex items-center justify-center text-slate-400 text-xs uppercase tracking-wide">
             ประชาสัมพันธ์ด้านการป้องกันทุจริต
           </div>
@@ -280,7 +257,7 @@
             </button>
           </div>
         </article>
-        <article class="group bg-[#f7f8fe] rounded-2xl shadow-sm overflow-hidden border border-slate-200 hover:border-obt-orange/70 hover:shadow-md transition-all">
+        <article class="group bg-[#f7f8fe] rounded-2xl shadow-sm overflow-hidden border border-slate-200 hover:border-obt-orange/70 hover:shadow-md transition-all animate-fade-up delay-300 hover-lift">
           <div class="aspect-video bg-gradient-to-br from-emerald-200 via-slate-200 to-obt-orange/20 flex items-center justify-center text-slate-500 text-xs uppercase tracking-wide">
             สวัสดิการและเบี้ยยังชีพ
           </div>
@@ -301,7 +278,7 @@
           </div>
         </article>
       </div>
-      <div class="mt-6 text-center">
+      <div class="mt-6 text-center animate-fade-up delay-400">
         <a href="pr.html" class="inline-flex items-center justify-center min-h-[44px] px-6 py-3 rounded-full bg-[#1E3A8A] text-white hover:bg-[#163068] font-medium text-sm shadow-md shadow-obt-blue/30">
           ดูข่าวประชาสัมพันธ์ทั้งหมด
         </a>
@@ -312,12 +289,12 @@
   <!-- ประกาศจัดซื้อจัดจ้าง -->
   <section id="procurement" class="py-10 md:py-14 bg-[#f7f8fe]">
     <div class="max-w-6xl mx-auto px-4">
-      <div class="flex items-center justify-between gap-4 mb-6">
+      <div class="flex items-center justify-between gap-4 mb-6 animate-fade-up">
         <h2 class="section-title text-xl md:text-2xl font-bold text-[#1E3A8A]">ประกาศจัดซื้อจัดจ้าง</h2>
         <p class="hidden md:block text-xs text-slate-500">ติดตามความเคลื่อนไหวด้านพัสดุและงบประมาณของ อบต.</p>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <article class="rounded-2xl bg-[#f7f8fe] border border-slate-200 hover:border-obt-orange/70 hover:shadow-md transition-all p-4 flex flex-col justify-between">
+        <article class="rounded-2xl bg-[#f7f8fe] border border-slate-200 hover:border-obt-orange/70 hover:shadow-md transition-all p-4 flex flex-col justify-between animate-fade-in-left delay-100 hover-lift">
           <div class="flex items-start gap-3">
             <div class="mt-1" style="width:6px; height:40px; border-radius:9999px; background-color:#F97316;"></div>
             <div>
@@ -333,7 +310,7 @@
             <button type="button" class="text-[#F97316] font-medium hover:underline">ดูรายละเอียด</button>
           </div>
         </article>
-        <article class="rounded-2xl bg-[#f7f8fe] border border-slate-200 hover:border-obt-orange/70 hover:shadow-md transition-all p-4 flex flex-col justify-between">
+        <article class="rounded-2xl bg-[#f7f8fe] border border-slate-200 hover:border-obt-orange/70 hover:shadow-md transition-all p-4 flex flex-col justify-between animate-fade-in-right delay-100 hover-lift">
           <div class="flex items-start gap-3">
             <div class="mt-1" style="width:6px; height:40px; border-radius:9999px; background-color:#1E3A8A;"></div>
             <div>
@@ -349,7 +326,7 @@
             <button type="button" class="text-[#F97316] font-medium hover:underline">ดูรายละเอียด</button>
           </div>
         </article>
-        <article class="rounded-2xl bg-[#f7f8fe] border border-slate-200 hover:border-obt-orange/70 hover:shadow-md transition-all p-4 flex flex-col justify-between">
+        <article class="rounded-2xl bg-[#f7f8fe] border border-slate-200 hover:border-obt-orange/70 hover:shadow-md transition-all p-4 flex flex-col justify-between animate-fade-in-left delay-200 hover-lift">
           <div class="flex items-start gap-3">
             <div class="mt-1" style="width:6px; height:40px; border-radius:9999px; background-color:#10B981;"></div>
             <div>
@@ -365,7 +342,7 @@
             <button type="button" class="text-[#F97316] font-medium hover:underline">ดูรายละเอียด</button>
           </div>
         </article>
-        <article class="rounded-2xl bg-gradient-to-br from-obt-blue/5 via-[#f7f8fe] to-obt-orange/10 border border-obt-orange/40 hover:border-obt-orange hover:shadow-md hover:shadow-obt-orange/20 transition-all p-4 flex flex-col justify-between">
+        <article class="rounded-2xl bg-gradient-to-br from-obt-blue/5 via-[#f7f8fe] to-obt-orange/10 border border-obt-orange/40 hover:border-obt-orange hover:shadow-md hover:shadow-obt-orange/20 transition-all p-4 flex flex-col justify-between animate-fade-in-right delay-200 hover-lift">
           <div class="flex items-start gap-3">
             <div class="mt-1" style="width:6px; height:40px; border-radius:9999px; background-color:#F97316;"></div>
             <div>
@@ -388,13 +365,13 @@
   <!-- ประมวลภาพกิจกรรม -->
   <section id="gallery" class="py-10 md:py-14 bg-[#f7f8fe]">
     <div class="max-w-6xl mx-auto px-4">
-      <div class="flex items-center justify-between gap-4 mb-6">
+      <div class="flex items-center justify-between gap-4 mb-6 animate-fade-up">
         <h2 class="section-title text-xl md:text-2xl font-bold text-[#1E3A8A]">ประมวลภาพกิจกรรม</h2>
         <a href="pr.html" class="text-sm text-[#F97316] hover:underline font-medium">ดูทั้งหมด →</a>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
         <!-- กิจกรรม 1 -->
-        <article class="group bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-col h-full">
+        <article class="group bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-col h-full animate-scale-in delay-100 hover-lift">
           <div class="relative overflow-hidden aspect-[4/3]">
             <img src="pics/pics1.jpg" alt="กิจกรรมวันพระราชทานธงชาติไทย" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
           </div>
@@ -409,7 +386,7 @@
         </article>
 
         <!-- กิจกรรม 2 -->
-        <article class="group bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-col h-full">
+        <article class="group bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-col h-full animate-scale-in delay-200 hover-lift">
           <div class="relative overflow-hidden aspect-[4/3]">
             <img src="pics/pics8.jpg" alt="กิจกรรมส่งเสริมวินัยจราจร" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
           </div>
@@ -424,7 +401,7 @@
         </article>
 
         <!-- กิจกรรม 3 -->
-        <article class="group bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-col h-full">
+        <article class="group bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-col h-full animate-scale-in delay-300 hover-lift">
           <div class="relative overflow-hidden aspect-[4/3]">
             <img src="pics/pics36.jpg" alt="ตั้งจุดคัดกรองตลาดลาดบัวขาว" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
           </div>
@@ -439,8 +416,8 @@
         </article>
       </div>
       
-      <div class="mt-8 text-center">
-        <a href="pr.html" class="inline-flex items-center justify-center min-h-[44px] px-6 py-3 rounded-full bg-[#1E3A8A] text-white hover:bg-[#163068] font-medium text-sm shadow-md shadow-obt-blue/30 transition-colors">
+      <div class="mt-8 text-center animate-fade-up delay-400">
+        <a href="pr.html" class="inline-flex items-center justify-center min-h-[44px] px-6 py-3 rounded-full bg-[#1E3A8A] text-white hover:bg-[#163068] font-medium text-sm shadow-md shadow-obt-blue/30 transition-colors hover-scale">
           ดูประมวลภาพกิจกรรมทั้งหมด
         </a>
       </div>

@@ -78,44 +78,6 @@
   // Close on Escape
   window.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMobileMenu(); });
 
-  // Contact submenu toggle (inside panel)
-  (function () {
-    var contactToggle = document.getElementById('mobile-contact-toggle');
-    var contactSubmenu = document.getElementById('mobile-contact-submenu');
-    var contactArrow = document.getElementById('mobile-contact-arrow');
-    if (contactToggle && contactSubmenu && contactArrow) {
-      contactToggle.addEventListener('click', function () {
-        var isHidden = contactSubmenu.classList.contains('hidden');
-        if (isHidden) {
-          contactSubmenu.classList.remove('hidden');
-          contactArrow.classList.add('rotate-180');
-        } else {
-          contactSubmenu.classList.add('hidden');
-          contactArrow.classList.remove('rotate-180');
-        }
-      });
-    }
-  })();
-
-  // Services submenu toggle (inside panel)
-  (function () {
-    var servicesToggle = document.getElementById('mobile-services-toggle');
-    var servicesSubmenu = document.getElementById('mobile-services-submenu');
-    var servicesArrow = document.getElementById('mobile-services-arrow');
-    if (servicesToggle && servicesSubmenu && servicesArrow) {
-      servicesToggle.addEventListener('click', function () {
-        var hidden = servicesSubmenu.classList.contains('hidden');
-        if (hidden) {
-          servicesSubmenu.classList.remove('hidden');
-          servicesArrow.classList.add('rotate-180');
-        } else {
-          servicesSubmenu.classList.add('hidden');
-          servicesArrow.classList.remove('rotate-180');
-        }
-      });
-    }
-  })();
-
   // Smooth scroll for procurement links (#procurement)
   (function () {
     var procLinks = document.querySelectorAll('a[href*="#procurement"]');
