@@ -1,0 +1,57 @@
+:root{
+  --obt-blue:#1E3A8A;
+  --obt-orange:#F97316;
+  --page-max:48rem;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{font-family:'Noto Sans Thai',system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;line-height:1.45;color:#0f1724;background:#fff}
+a{color:var(--obt-blue);text-decoration:none}
+img{max-width:100%;height:auto;display:block}
+
+/* Layout container */
+.max-w-3xl{max-width:var(--page-max);margin-left:auto;margin-right:auto}
+.mx-auto{margin-left:auto;margin-right:auto}
+.px-4{padding-left:1rem;padding-right:1rem}
+.py-6{padding-top:1.5rem;padding-bottom:1.5rem}
+
+/* Colors */
+.text-obt-blue{color:var(--obt-blue)}
+.bg-obt-orange{background:var(--obt-orange)}
+.bg-obt-blue{background:var(--obt-blue)}
+.text-white{color:#fff}
+
+/* Cards and helpers */
+.rounded-xl{border-radius:0.75rem}
+.rounded-lg{border-radius:0.5rem}
+.border{border:1px solid #e6e9ef}
+.shadow-sm{box-shadow:0 1px 4px rgba(16,24,40,0.06)}
+.p-4{padding:1rem}
+.p-6{padding:1.5rem}
+.flex{display:flex}
+.items-center{align-items:center}
+.gap-3{gap:0.75rem}
+.gap-4{gap:1rem}
+.font-semibold{font-weight:600}
+.text-sm{font-size:0.9rem}
+.text-xs{font-size:0.78rem}
+.text-lg{font-size:1.125rem}
+.mt-1{margin-top:0.25rem}
+.mt-2{margin-top:0.5rem}
+.mb-2{margin-bottom:0.5rem}
+.mb-6{margin-bottom:1.5rem}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.5rem 0.75rem;border-radius:0.5rem;border:1px solid transparent;font-size:0.95rem}
+.btn-outline{background:#fff;border-color:#e6e9ef;color:var(--obt-blue)}
+.btn-primary{background:var(--obt-orange);color:#fff}
+
+/* Responsive: two column on small screens up */
+@media (min-width:640px){
+  .sm\:grid-cols-2{display:grid;grid-template-columns:repeat(2,1fr)}
+}
+
+.grid{display:grid;grid-template-columns:1fr}
+.space-y-4 > * + *{margin-top:1rem}
+
+footer{color:#6b7280;padding:1.5rem 0;text-align:center}

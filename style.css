@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@layer utilities {
+	.touch-target {
+		min-height: 44px;
+		min-width: 44px;
+	}
+}
+
+@layer components {
+	.section-title::before {
+		content: "";
+		display: inline-block;
+		width: 2rem;
+		height: 0.25rem;
+		border-radius: 9999px;
+		background-color: #F97316;
+		margin-right: 0.5rem;
+		vertical-align: middle;
+	}
+
+	/* Hero background: layered gradient base + subtle 40px plus-grid */
+	.hero-bg {
+		/* draw grid on top so it's visible above gradients */
+		/* smaller plus mark, slightly larger spacing (48px) */
+		background-image:
+			url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'><path d='M24 20 L24 28 M20 24 L28 24' stroke='%23ffffff' stroke-opacity='0.10' stroke-linecap='round' stroke-width='1'/></svg>"),
+			radial-gradient(circle at 8% 8%, rgba(255,255,255,0.06), transparent 12%),
+			linear-gradient(180deg, rgba(28, 54, 128, 0.5) 0%, rgba(19, 36, 56, 0.6) 100%),
+			url("images/hero.png");
+
+		background-repeat: repeat, no-repeat, no-repeat, no-repeat;
+		background-size: 48px 48px, cover, cover, cover;
+		background-position: 0 0, center, center, center;
+	}
+}

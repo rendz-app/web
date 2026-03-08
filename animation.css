@@ -1,0 +1,206 @@
+/* ========================================
+   Animation Utilities
+======================================== */
+
+/* Fade Up Animation */
+@keyframes fadeUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Fade In Left */
+@keyframes fadeInLeft {
+  0% { opacity: 0; transform: translateX(-30px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+/* Fade In Right */
+@keyframes fadeInRight {
+  0% { opacity: 0; transform: translateX(30px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+/* Scale In */
+@keyframes scaleIn {
+  0% { opacity: 0; transform: scale(0.9); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+/* Bounce In */
+@keyframes bounceIn {
+  0% { opacity: 0; transform: scale(0.3); }
+  50% { opacity: 1; transform: scale(1.05); }
+  70% { transform: scale(0.9); }
+  100% { transform: scale(1); }
+}
+
+/* Slide Down */
+@keyframes slideDown {
+  0% { opacity: 0; transform: translateY(-30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Rotate In */
+@keyframes rotateIn {
+  0% { opacity: 0; transform: rotate(-10deg) scale(0.9); }
+  100% { opacity: 1; transform: rotate(0) scale(1); }
+}
+
+/* Float Animation (continuous) */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Pulse Animation (continuous) */
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/* Shake Animation */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+  20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+/* Glow Animation */
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 5px rgba(249, 115, 22, 0.5); }
+  50% { box-shadow: 0 0 20px rgba(249, 115, 22, 0.8); }
+}
+
+/* ========================================
+   Animation Classes
+======================================== */
+
+/* Fade Up */
+.animate-fade-up {
+  opacity: 0;
+  animation: fadeUp 0.8s ease-out forwards;
+  animation-delay: var(--delay, 0s);
+}
+
+/* Fade In */
+.animate-fade-in {
+  opacity: 0;
+  animation: fadeIn 0.6s ease-out forwards;
+  animation-delay: var(--delay, 0s);
+}
+
+/* Fade In Left */
+.animate-fade-in-left {
+  opacity: 0;
+  animation: fadeInLeft 0.8s ease-out forwards;
+  animation-delay: var(--delay, 0s);
+}
+
+/* Fade In Right */
+.animate-fade-in-right {
+  opacity: 0;
+  animation: fadeInRight 0.8s ease-out forwards;
+  animation-delay: var(--delay, 0s);
+}
+
+/* Scale In */
+.animate-scale-in {
+  opacity: 0;
+  animation: scaleIn 0.6s ease-out forwards;
+  animation-delay: var(--delay, 0s);
+}
+
+/* Bounce In */
+.animate-bounce-in {
+  opacity: 0;
+  animation: bounceIn 0.8s ease-out forwards;
+  animation-delay: var(--delay, 0s);
+}
+
+/* Slide Down */
+.animate-slide-down {
+  opacity: 0;
+  animation: slideDown 0.6s ease-out forwards;
+  animation-delay: var(--delay, 0s);
+}
+
+/* Rotate In */
+.animate-rotate-in {
+  opacity: 0;
+  animation: rotateIn 0.7s ease-out forwards;
+  animation-delay: var(--delay, 0s);
+}
+
+/* Float (continuous) */
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Pulse (continuous) */
+.animate-pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Shake */
+.animate-shake {
+  animation: shake 0.5s ease-in-out;
+}
+
+/* Glow */
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+/* Hover Effects */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.hover-scale {
+  transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+.hover-glow {
+  transition: box-shadow 0.3s ease;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 20px rgba(249, 115, 22, 0.6);
+}
+
+/* Delay Utilities */
+.delay-100 { --delay: 0.1s; }
+.delay-200 { --delay: 0.2s; }
+.delay-300 { --delay: 0.3s; }
+.delay-400 { --delay: 0.4s; }
+.delay-500 { --delay: 0.5s; }
+.delay-600 { --delay: 0.6s; }
+.delay-700 { --delay: 0.7s; }
+.delay-800 { --delay: 0.8s; }
+
+/* Legacy support */
+.animate-on-load {
+  opacity: 0;
+  transform: translateY(12px);
+  animation: fadeUp 700ms ease-out forwards;
+  animation-delay: var(--delay, 0s);
+}
+
+.animate-on-load[data-delay] { 
+  animation-delay: var(--delay, 0s); 
+}
